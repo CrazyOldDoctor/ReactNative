@@ -33,7 +33,7 @@ export default class MyScene extends Component {
   render(){
     return(
       <View>
-        <Text>
+        <Text style={styles.title}>
         Current Scene:{this.props.title}
         </Text>
         <TouchableHighlight onPress = {this.props.onForward}>
@@ -51,12 +51,20 @@ export default class MyScene extends Component {
   }
 }
 //在这个例子中，MyScene通过title属性接受了路由对象中的title值。它还包含了两个可点击的组件TouchableHighlight，会在点击时分别调用通过props传入的onForward和onBack方法，而这两个方法各自调用了navigator.push()和navigator.pop()，从而实现了场景的变化。
-// const styles = StyleSheet.create({
-//   container: {
-//     flex: 1,
-//     justifyContent: 'center',
-//     alignItems: 'center',
-//     backgroundColor: '#F5FCFF',
-//   },
-// });style={styles.container}
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: '#F5FCFF',
+  },
+  title:{
+    height:64,
+    backgroundColor:'bisque',
+    textAlign:'center',
+    // justifycjustifyContent:'center',
+    // alignItems:'center',
+    paddingTop:64/2
+  }
+});
 //自己添加的样式，为了好看
